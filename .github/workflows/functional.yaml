@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
 jobs:
-  functiona_tests:
+  functional_tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:

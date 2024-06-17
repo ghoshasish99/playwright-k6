@@ -1,6 +1,6 @@
 # Nordic Testing Days Workshop
 
-[![Playwright Tests](https://github.com/ghoshasish99/ntd-workshop/actions/workflows/functional.yaml/badge.svg)](https://github.com/ghoshasish99/ntd-workshop/actions/workflows/functional.yaml)
+[![Functional-Performance Tests](https://github.com/ghoshasish99/ntd-workshop/actions/workflows/functional.yaml/badge.svg)](https://github.com/ghoshasish99/ntd-workshop/actions/workflows/functional.yaml)
 
 ## Playwright Commands
 
@@ -16,13 +16,14 @@
 
 or configure your `playwright.config.js` to have the following :
 
-```json
+```javascript
+
 projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'], headless:false },
     }
-
+]
 ```
 <br>
 
@@ -82,7 +83,8 @@ To be able to run only the tagged tests, you can use `npx playwright test --grep
 
 🔍 To collect evidences in the form of `traces` , `screenshots` or `videos`, you can configure the `playwright.config.js` like so :
 
-```json
+```javascript
+
 use: {
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
