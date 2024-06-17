@@ -1,11 +1,11 @@
-name: Playwright Tests
+name: Functional-Performance Tests
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
 jobs:
-  test:
+  functiona_tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -25,3 +25,13 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+  performance_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run k6 local tests
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: performance-tests/api.group.js
